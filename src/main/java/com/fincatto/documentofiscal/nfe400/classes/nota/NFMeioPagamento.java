@@ -18,7 +18,8 @@ public enum NFMeioPagamento {
     TRANSFERENCIA_BANCARIA("18", "Transferencia bancaria"),
     FIDELIDADE_CASHBACK("19", "Programa de fidelidade (Cashback)"),	
     SEM_PAGAMENTO("90", "Sem pagamento"),
-    OUTRO("99", "Outro");
+    OUTRO("99", "Outro"),
+	NAO_INFORMADO("00","Não informado");
 
     private final String codigo;
     private final String descricao;
@@ -38,7 +39,7 @@ public enum NFMeioPagamento {
                 return formaPagamentoMoeda;
             }
         }
-        return null;
+        return NFMeioPagamento.NAO_INFORMADO;
     }
 
     @Override
