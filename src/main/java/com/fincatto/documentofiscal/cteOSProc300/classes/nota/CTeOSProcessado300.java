@@ -5,7 +5,6 @@ import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Root;
 
 import com.fincatto.documentofiscal.DFBase;
-import com.fincatto.documentofiscal.cte300.classes.enviolote.consulta.CTeProtocolo;
 
 /**
  * Created by Eldevan Nery Junior on 09/10/17.
@@ -13,30 +12,13 @@ import com.fincatto.documentofiscal.cte300.classes.enviolote.consulta.CTeProtoco
 @Root(name = "cteOSProc")
 public class CTeOSProcessado300 extends DFBase {
     private static final long serialVersionUID = 7518732714448342954L;
-
-    /**
-     * Tipo IP versão 4
-     */
-    @Attribute(name = "ipTransmissor", required = false)
-    private String ipTransmissor;
-
+   
     @Attribute(name = "versao")
     private String versao;
-
+    
     @Element(name = "CTeOS")
-    private CTeNota cte;
-
-    @Element(name = "protCTe")
-    private CTeProtocolo protocolo;
-
-    public String getIpTransmissor() {
-        return this.ipTransmissor;
-    }
-
-    public void setIpTransmissor(final String ipTransmissor) {
-        this.ipTransmissor = ipTransmissor;
-    }
-
+    private CTeNota cteNota;
+   
     public String getVersao() {
         return this.versao;
     }
@@ -45,19 +27,13 @@ public class CTeOSProcessado300 extends DFBase {
         this.versao = versao;
     }
 
-    public CTeNota getCte() {
-        return this.cte;
-    }
+	public CTeNota getCteNota() {
+		return cteNota;
+	}
 
-    public void setCte(final CTeNota cte) {
-        this.cte = cte;
-    }
+	public void setCteNota(CTeNota cteNota) {
+		this.cteNota = cteNota;
+	}
 
-    public CTeProtocolo getProtocolo() {
-        return this.protocolo;
-    }
-
-    public void setProtocolo(final CTeProtocolo protocolo) {
-        this.protocolo = protocolo;
-    }
+   
 }
