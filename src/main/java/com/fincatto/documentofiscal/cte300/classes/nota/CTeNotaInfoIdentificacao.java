@@ -84,7 +84,7 @@ public class CTeNotaInfoIdentificacao extends DFBase {
     @Element(name = "modal")
     private CTModal modalidadeFrete;
     
-    @Element(name = "tpServ")
+    @Element(name = "tpServ", required = false)
     private CTTipoServico tipoServico;
     
     @Element(name = "cMunIni")
@@ -105,7 +105,7 @@ public class CTeNotaInfoIdentificacao extends DFBase {
     @Element(name = "UFFim")
     private String siglaUfFim;
     
-    @Element(name = "retira")
+    @Element(name = "retira",required = false)
     private CTRetirada retira;
     
     @Element(name = "xDetRetira", required = false)

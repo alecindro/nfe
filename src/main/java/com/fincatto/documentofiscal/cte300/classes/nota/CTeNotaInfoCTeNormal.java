@@ -18,7 +18,7 @@ import java.util.List;
 public class CTeNotaInfoCTeNormal extends DFBase {
     private static final long serialVersionUID = 2249807934468854296L;
     
-    @Element(name = "infCarga")
+    @Element(name = "infCarga", required = false)
     private CTeNotaInfoCTeNormalInfoCarga infoCarga;
 
     @Element(name = "infDoc", required = false)
