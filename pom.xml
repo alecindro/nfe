@@ -1,6 +1,6 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>br.com.mistecontador</groupId>
+    <groupId>br.com.mrcontador</groupId>
     <artifactId>nfe</artifactId>
     <packaging>jar</packaging>
     <version>4.0.7-SNAPSHOT</version>
@@ -18,9 +18,13 @@
 
 
     <properties>
+		<argLine>-Djava.security.egd=file:/dev/./urandom -Xmx256m</argLine>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>11</java.version>
+		<maven.compiler.source>${java.version}</maven.compiler.source>
+		<maven.compiler.target>${java.version}</maven.compiler.target>
+		<maven-resources-plugin.version>3.1.0</maven-resources-plugin.version>
         <axis2.version>1.6.4</axis2.version>
         <slf4j.version>2.0.6</slf4j.version>
         <junit.version>4.13.2</junit.version>
@@ -130,22 +134,7 @@
             </resource>
         </resources>
 
-        <testResources>
-            <testResource>
-                <filtering>false</filtering>
-                <directory>src/test/resources</directory>
-            </testResource>
-            <testResource>
-                <filtering>false</filtering>
-                <directory>src/test/java</directory>
-                <includes>
-                    <include>**</include>
-                </includes>
-                <excludes>
-                    <exclude>**/*.java</exclude>
-                </excludes>
-            </testResource>
-        </testResources>
+      
 
         <plugins>
             <!-- Configuracao do build-->
@@ -161,45 +150,8 @@
                     <debug>false</debug>
                 </configuration>
             </plugin>
-
-            <!-- Cobertura de testes -->
-            <plugin>
-                <groupId>org.eluder.coveralls</groupId>
-                <artifactId>coveralls-maven-plugin</artifactId>
-                <version>4.3.0</version>
-                <configuration>
-                    <repoToken>QTRbpWiuiwIHGrc0arqKxXsAtiVoLMc5h</repoToken>
-                </configuration>
-                <dependencies>
-                    <!--
-                    Explicit dep on jaxb-api to avoid problems with JDK9 and later, until a new version of coveralls-maven-plugin is released.
-                    See also https://github.com/trautonen/coveralls-maven-plugin/issues/112
-                    -->
-                    <dependency>
-                        <groupId>javax.xml.bind</groupId>
-                        <artifactId>jaxb-api</artifactId>
-                        <version>2.3.1</version>
-                    </dependency>
-                </dependencies>
-            </plugin>
-            <plugin>
-                <groupId>org.jacoco</groupId>
-                <artifactId>jacoco-maven-plugin</artifactId>
-                <version>0.8.8</version>
-                <executions>
-                    <execution>
-                        <id>prepare-agent</id>
-                        <goals>
-                            <goal>prepare-agent</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <excludes>
-                        <exclude>**/webservices/**/*</exclude>
-                    </excludes>
-                </configuration>
-            </plugin>
+          
+        
         </plugins>
     </build>
 
