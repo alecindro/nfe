@@ -13,16 +13,16 @@ public class NFProtocoloInfo extends DFBase {
     @Attribute(name = "Id", required = false)
     private String identificador;
     
-    @Element(name = "tpAmb")
+    @Element(name = "tpAmb",required = false)
     private DFAmbiente ambiente;
     
-    @Element(name = "verAplic")
+    @Element(name = "verAplic",required = false)
     private String versaoAplicacao;
     
-    @Element(name = "chNFe")
+    @Element(name = "chNFe",required = false)
     private String chave;
     
-    @Element(name = "dhRecbto")
+    @Element(name = "dhRecbto",required = false)
     private ZonedDateTime dataRecebimento;
     
     @Element(name = "nProt", required = false)
@@ -31,10 +31,10 @@ public class NFProtocoloInfo extends DFBase {
     @Element(name = "digVal", required = false)
     private String validador;
     
-    @Element(name = "cStat")
+    @Element(name = "cStat",required = false)
     private String status;
     
-    @Element(name = "xMotivo")
+    @Element(name = "xMotivo",required = false)
     private String motivo;
     
     public void setAmbiente(final DFAmbiente ambiente) {
