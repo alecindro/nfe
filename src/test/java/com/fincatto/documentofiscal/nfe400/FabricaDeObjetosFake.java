@@ -961,7 +961,7 @@ public class FabricaDeObjetosFake {
         importacaoAdicao.setDesconto(new BigDecimal("999999999999.99"));
         importacaoAdicao.setNumero(999);
         importacaoAdicao.setSequencial(999);
-        importacaoAdicao.setNumeroAtoConcessorioDrawback(new BigInteger("99999999999"));
+        importacaoAdicao.setNumeroAtoConcessorioDrawback("99999999999");
         return importacaoAdicao;
     }
     

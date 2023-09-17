@@ -21,7 +21,7 @@ import java.util.List;
 public class CTeNotaInfoCTeNormalInfoCarga extends DFBase {
     private static final long serialVersionUID = -2031819416191957758L;
     
-    @Element(name = "vCarga")
+    @Element(name = "vCarga", required = false)
     private String valorTotalCarga;
     
     @Element(name = "proPred")

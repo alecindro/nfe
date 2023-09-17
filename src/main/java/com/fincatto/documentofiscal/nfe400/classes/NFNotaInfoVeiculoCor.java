@@ -19,7 +19,8 @@ public enum NFNotaInfoVeiculoCor {
     ROXA("13", "Roxa"),
     VERDE("14", "Verde"),
     VERMELHA("15", "Vermelha"),
-    FANTASIA("16", "Fantasia");
+    FANTASIA("16", "Fantasia"),
+    OUTRO("99", "Outro");
 
     private final String codigo;
     private final String descricao;

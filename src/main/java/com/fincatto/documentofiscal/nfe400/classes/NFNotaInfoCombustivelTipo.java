@@ -25,7 +25,8 @@ public enum NFNotaInfoCombustivelTipo {
     GASOLINA_ELETRICO("18", "Gasolina/El\u00e9trico"),
     GASOLINA_ALCOOL_ELETRICO("19", "Gasolina/\u00c1lcool/El\u00e9trico"),
     GAS_NATURAL_LIQUEFEITO("20", "G\u00e1s natural liquefeito"),
-    DIESEL_ELETRICO("21", "Diesel/El\u00e9trico");
+    DIESEL_ELETRICO("21", "Diesel/El\u00e9trico"),
+    DIVERSOS("23", "Diverso");
 
     private final String codigo;
     private final String descricao;

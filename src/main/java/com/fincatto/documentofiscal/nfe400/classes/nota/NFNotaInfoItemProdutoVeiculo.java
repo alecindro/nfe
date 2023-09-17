@@ -39,7 +39,7 @@ public class NFNotaInfoItemProdutoVeiculo extends DFBase {
     @Element(name = "nSerie")
     private String numeroSerie;
 
-    @Element(name = "tpComb")
+    @Element(name = "tpComb", required = false)
     private NFNotaInfoCombustivelTipo tipoCombustivel;
 
     @Element(name = "nMotor")
@@ -75,7 +75,7 @@ public class NFNotaInfoItemProdutoVeiculo extends DFBase {
     @Element(name = "cMod")
     private String codigoMarcaModelo;
 
-    @Element(name = "cCorDENATRAN")
+    @Element(name = "cCorDENATRAN",required = false)
     private NFNotaInfoVeiculoCor corDENATRAN;
 
     @Element(name = "lota")
