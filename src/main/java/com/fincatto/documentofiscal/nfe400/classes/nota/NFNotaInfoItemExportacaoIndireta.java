@@ -12,7 +12,7 @@ import java.math.BigInteger;
 public class NFNotaInfoItemExportacaoIndireta extends DFBase {
     private static final long serialVersionUID = 2911935204123851926L;
     
-    @Element(name = "nRE")
+    @Element(name = "nRE", required = false)
     private BigInteger numeroRegistroExportacao;
     
     @Element(name = "chNFe")
