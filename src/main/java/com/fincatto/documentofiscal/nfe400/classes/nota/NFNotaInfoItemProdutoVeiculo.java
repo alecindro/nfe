@@ -60,7 +60,7 @@ public class NFNotaInfoItemProdutoVeiculo extends DFBase {
     @Element(name = "tpPint")
     private String tipoPintura;
 
-    @Element(name = "tpVeic")
+    @Element(name = "tpVeic", required =false)
     private NFNotaInfoTipoVeiculo tipoVeiculo;
 
     @Element(name = "espVeic")
