@@ -12,9 +12,10 @@ public class DFZonedDateTimeTransformer implements Transform<ZonedDateTime> {
 	@Override
 	public ZonedDateTime read(final String data) {
 		String value = data;
-		if (!value.matches("(\\d{4}(-)\\d{2}(-)\\d{2}(T))((\\d{2})(:)(\\d{2})(:)(\\d{2})(-)(\\d{2})(:)(\\d{2}))")) {
+		if (!value.matches("(\\d{4}(-)\\d{2}(-)\\d{2}(T))((\\d{2})(:)(\\d{2})(:)(\\d{2})(-)?(\\+)?(\\d{2})(:)(\\d{2}))")) {
 			value = value + "-03:00";
 		}
+		
 		return ZonedDateTime.parse(value, DFZonedDateTimeTransformer.FORMATTER);
 	}
 
