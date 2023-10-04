@@ -33,7 +33,7 @@ public class NFNotaInfoItemImpostoICMSUFDestino extends DFBase {
     @Element(name = "vICMSUFDest")
     private String valorICMSInterestadualDestino;
     
-    @Element(name = "vICMSUFRemet")
+    @Element(name = "vICMSUFRemet", required = false)
     private String valorICMSInterestadualRemetente;
 
     public String getValorBaseCalculoDestino() {
