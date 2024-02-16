@@ -27,10 +27,10 @@ public class NFNotaInfoItemProduto extends DFBase {
     @Element(name = "cBarra", required = false)
     private String codigoDeBarrasDiferenteGtin;
 
-    @Element(name = "xProd")
+    @Element(name = "xProd", required = false)
     private String descricao;
 
-    @Element(name = "NCM")
+    @Element(name = "NCM", required = false)
     private String ncm;
 
     @ElementList(entry = "NVE", inline = true, required = false)
@@ -51,7 +51,7 @@ public class NFNotaInfoItemProduto extends DFBase {
     @Element(name = "EXTIPI", required = false)
     private String extipi;
 
-    @Element(name = "CFOP")
+    @Element(name = "CFOP", required = false)
     private String cfop;
 
     @Element(name = "uCom")

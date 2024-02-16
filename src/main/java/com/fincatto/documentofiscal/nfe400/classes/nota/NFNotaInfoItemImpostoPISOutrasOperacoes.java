@@ -10,7 +10,7 @@ import java.math.BigDecimal;
 public class NFNotaInfoItemImpostoPISOutrasOperacoes extends DFBase {
     private static final long serialVersionUID = 5707508769646733720L;
     
-    @Element(name = "CST")
+    @Element(name = "CST", required = false)
     private NFNotaInfoSituacaoTributariaPIS situacaoTributaria;
 
     @Element(name = "vBC", required = false)
