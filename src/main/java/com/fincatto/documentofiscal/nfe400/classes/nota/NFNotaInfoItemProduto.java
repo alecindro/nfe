@@ -54,16 +54,16 @@ public class NFNotaInfoItemProduto extends DFBase {
     @Element(name = "CFOP", required = false)
     private String cfop;
 
-    @Element(name = "uCom")
+    @Element(name = "uCom", required = false)
     private String unidadeComercial;
 
-    @Element(name = "qCom")
+    @Element(name = "qCom", required = false)
     private String quantidadeComercial;
 
-    @Element(name = "vUnCom")
+    @Element(name = "vUnCom", required = false)
     private String valorUnitario;
 
-    @Element(name = "vProd")
+    @Element(name = "vProd", required = false)
     private String valorTotalBruto;
 
     @Element(name = "cEANTrib", required = false)

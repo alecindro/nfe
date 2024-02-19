@@ -7,6 +7,7 @@ import org.junit.Test;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 
 public class NFProtocoloInfoTest {
 
@@ -38,7 +39,8 @@ public class NFProtocoloInfoTest {
     public void deveObterChaveComoFoiSetado() {
         final NFProtocoloInfo protocoloInfo = new NFProtocoloInfo();
         final String chave = "27453083767543876731879602388114613152665633";
-        protocoloInfo.setChave(chave);
+        protocoloInfo.setChave(new ArrayList<>());
+        protocoloInfo.getChave().add("EAIOjea");
         Assert.assertEquals(chave, protocoloInfo.getChave());
     }
 
@@ -62,7 +64,8 @@ public class NFProtocoloInfoTest {
     public void deveObterNumeroProtocoloComoFoiSetado() {
         final NFProtocoloInfo protocoloInfo = new NFProtocoloInfo();
         final String numeroProtocolo = "123456789";
-        protocoloInfo.setNumeroProtocolo(numeroProtocolo);
+        protocoloInfo.setNumeroProtocolo(new ArrayList<>());
+        protocoloInfo.getNumeroProtocolo().add("490309504");
         Assert.assertEquals(numeroProtocolo, protocoloInfo.getNumeroProtocolo());
     }
 

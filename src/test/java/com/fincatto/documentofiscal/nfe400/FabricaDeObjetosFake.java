@@ -457,10 +457,12 @@ public class FabricaDeObjetosFake {
     public static NFProtocoloInfo getNFProtocoloInfo() {
         final NFProtocoloInfo info = new NFProtocoloInfo();
         info.setAmbiente(DFAmbiente.HOMOLOGACAO);
-        info.setChave("EAIOjea");
+        info.setChave(new ArrayList<>());
+        info.getChave().add("EAIOjea");
         info.setDataRecebimento("2014-06-10T09:00:00-03:00");
         info.setMotivo("jsoaosk");
-        info.setNumeroProtocolo("490309504");
+        info.setNumeroProtocolo(new ArrayList<>());
+        info.getNumeroProtocolo().add("490309504");
         info.setStatus("OK");
         info.setValidador("gfsfgsrg");
         info.setVersaoAplicacao("4.00");
