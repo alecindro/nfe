@@ -39,8 +39,7 @@ public class NFProtocoloInfoTest {
     public void deveObterChaveComoFoiSetado() {
         final NFProtocoloInfo protocoloInfo = new NFProtocoloInfo();
         final String chave = "27453083767543876731879602388114613152665633";
-        protocoloInfo.setChave(new ArrayList<>());
-        protocoloInfo.getChave().add("EAIOjea");
+        protocoloInfo.setChave("EAIOjea");
         Assert.assertEquals(chave, protocoloInfo.getChave());
     }
 
@@ -64,8 +63,7 @@ public class NFProtocoloInfoTest {
     public void deveObterNumeroProtocoloComoFoiSetado() {
         final NFProtocoloInfo protocoloInfo = new NFProtocoloInfo();
         final String numeroProtocolo = "123456789";
-        protocoloInfo.setNumeroProtocolo(new ArrayList<>());
-        protocoloInfo.getNumeroProtocolo().add("490309504");
+        protocoloInfo.setNumeroProtocolo("490309504");
         Assert.assertEquals(numeroProtocolo, protocoloInfo.getNumeroProtocolo());
     }
 
