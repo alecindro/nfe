@@ -9,10 +9,10 @@ import java.math.BigDecimal;
 public class NFNotaInfoPagamento extends DFBase {
     private static final long serialVersionUID = -2613537583415054150L;
     
-    @Element(name = "tPag")
+    @Element(name = "tPag", required = false)
     private NFFormaPagamentoMoeda formaPagamentoMoeda;
     
-    @Element(name = "vPag")
+    @Element(name = "vPag", required = falseCorrigido)
     private String valorPagamento;
 
     @Element(name = "card", required = false)

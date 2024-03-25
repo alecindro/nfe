@@ -27,7 +27,7 @@ public class NFNotaInfoIdentificacao extends DFBase {
     @Element(name = "natOp")
     private String naturezaOperacao;
     
-    @Element(name = "indPag")
+    @Element(name = "indPag", required = false)
     private NFFormaPagamentoPrazo formaPagamento;
     
     @Element(name = "mod")
