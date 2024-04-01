@@ -12,7 +12,7 @@ public class NFNotaInfoPagamento extends DFBase {
     @Element(name = "tPag", required = false)
     private NFFormaPagamentoMoeda formaPagamentoMoeda;
     
-    @Element(name = "vPag", required = falseCorrigido)
+    @Element(name = "vPag", required = false)
     private String valorPagamento;
 
     @Element(name = "card", required = false)

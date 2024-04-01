@@ -18,7 +18,7 @@ public class NFNotaInfoItemImpostoICMS00 extends DFBase {
     @Element(name = "CST")
     private NFNotaInfoImpostoTributacaoICMS situacaoTributaria;
     
-    @Element(name = "modBC")
+    @Element(name = "modBC", required = false)
     private NFNotaInfoItemModalidadeBCICMS modalidadeBCICMS;
     
     @Element(name = "vBC")
