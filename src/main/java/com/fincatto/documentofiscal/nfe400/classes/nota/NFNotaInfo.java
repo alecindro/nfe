@@ -44,7 +44,7 @@ public class NFNotaInfo extends DFBase {
     @ElementList(entry = "autXML", inline = true, required = false)
     private List<NFPessoaAutorizadaDownloadNFe> pessoasAutorizadasDownloadNFe;
     
-    @ElementList(entry = "det", inline = true)
+    @ElementList(entry = "det", inline = true, required = false)
     private List<NFNotaInfoItem> itens;
     
     @Element(name = "total")
