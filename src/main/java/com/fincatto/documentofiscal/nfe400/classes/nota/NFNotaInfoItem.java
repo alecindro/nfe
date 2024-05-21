@@ -12,7 +12,7 @@ import java.util.List;
 public class NFNotaInfoItem extends DFBase {
     private static final long serialVersionUID = 362646693945373643L;
     
-    @Attribute(name = "nItem")
+    @Attribute(name = "nItem", required = false)
     private Integer numeroItem;
     
     @Element(name = "prod")

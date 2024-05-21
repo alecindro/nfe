@@ -6,7 +6,9 @@ import com.fincatto.documentofiscal.validadores.DFBigDecimalValidador;
 import org.simpleframework.xml.Attribute;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.Namespace;
+import org.simpleframework.xml.Path;
 import org.simpleframework.xml.Root;
+import org.simpleframework.xml.Text;
 
 import java.math.BigDecimal;
 
@@ -15,7 +17,9 @@ import java.math.BigDecimal;
 public class NFNotaProcessada extends DFBase {
     private static final long serialVersionUID = 6979476565566044621L;
 
-    @Attribute(name = "versao", required=false)
+    //@Attribute(name = "versao", required=false)
+    @Path("versao")
+    @Text(required = false)
     private String versao;
 
     @Attribute(name = "schemaLocation", required = false)

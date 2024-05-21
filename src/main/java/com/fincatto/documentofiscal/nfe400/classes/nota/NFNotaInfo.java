@@ -17,10 +17,12 @@ public class NFNotaInfo extends DFBase {
 
     public static final String IDENT = "NFe";
     
-    @Attribute(name = "Id")
+    //@Attribute(name = "Id",required = false, empty = IDENT)
+    @Path("Id")
+    @Text(required = false)
     private String identificador;
     
-    @Attribute(name = "versao")
+    @Attribute(name = "versao",required = false)
     private String versao;
     
     @Element(name = "ide")
