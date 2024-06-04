@@ -11,10 +11,10 @@ import org.simpleframework.xml.Root;
 public class NFNotaInfoSuplementar extends DFBase {
     private static final long serialVersionUID = -7212144193264841151L;
     
-    @Element(data = true, name = "qrCode")
+    @Element(data = true, name = "qrCode", required = false)
     private String qrCode;
     
-    @Element(name = "urlChave")
+    @Element(name = "urlChave", required = false)
     private String urlConsultaChaveAcesso;
 
     public void setQrCode(final String qrCode) {
