@@ -1,14 +1,16 @@
 package com.fincatto.documentofiscal.nfe400.classes;
 
-import com.fincatto.documentofiscal.DFAmbiente;
-import com.fincatto.documentofiscal.DFBase;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
 import org.apache.commons.lang3.ObjectUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.simpleframework.xml.Attribute;
-import org.simpleframework.xml.Element;
+import org.simpleframework.xml.Path;
+import org.simpleframework.xml.Text;
 
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
+import com.fincatto.documentofiscal.DFAmbiente;
+import com.fincatto.documentofiscal.DFBase;
 
 public class NFProtocoloInfo extends DFBase {
     private static final long serialVersionUID = -7256753142051587115L;
@@ -16,34 +18,44 @@ public class NFProtocoloInfo extends DFBase {
     @Attribute(name = "Id", required = false)
     private String identificador;
     
-    @Element(name = "tpAmb", required = false)
+    @Path("tpAmb")
+    @Text(required = false)
     private DFAmbiente ambiente;
     
-    @Element(name = "verAplic", required = false)
+    @Path("verAplic")
+    @Text(required = false)
     private String versaoAplicacao;
     
-    @Element(name = "chNFe", required = false)
+    @Path("chNFe")
+    @Text(required = false)
     private String chave;
     
-    @Element(name = "dhRecbto", required = false)
+    @Path("dhRecbto")
+    @Text(required = false)    
     private String dataRecebimento;
 
-    @Element(name = "nProt", required = false)
+    @Path("nProt")
+    @Text(required = false)    
     private String numeroProtocolo;
 
-    @Element(name = "digVal", required = false)
+    @Path("digVal")
+    @Text(required = false)
     private String validador;
     
-    @Element(name = "cStat", required = false)
+    @Path("cStat")
+    @Text(required = false)    
     private String status;
 
-    @Element(name = "xMotivo", required = false)
+    @Path("xMotivo")
+    @Text(required = false)    
     private String motivo;
 
-    @Element(name = "cMsg", required = false)
+    @Path("cMsg")
+    @Text(required = false)    
     private String codigoMessage;
 
-    @Element(name = "xMsg", required = false)
+    @Path("xMsg")
+    @Text(required = false)    
     private String mensagem;
 
     public void setAmbiente(final DFAmbiente ambiente) {
