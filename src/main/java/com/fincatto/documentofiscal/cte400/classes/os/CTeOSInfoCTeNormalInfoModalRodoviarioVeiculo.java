@@ -22,7 +22,7 @@ public class CTeOSInfoCTeNormalInfoModalRodoviarioVeiculo extends DFBase {
     @Element(name = "prop", required = false)
     private CTeOSInfoCTeNormalInfoModalRodoviarioVeiculoProprietario proprietario;
 
-    @Element(name = "UF")
+    @Element(name = "UF", required = false)
     private String uf;
 
     public String getPlaca() {
