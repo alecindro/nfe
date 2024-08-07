@@ -11,7 +11,7 @@ public class NFNotaInfoProcessoReferenciado extends DFBase {
     @Element(name = "nProc")
     private String identificadorProcessoOuAtoConcessorio;
 
-    @Element(name = "indProc")
+    @Element(name = "indProc", required = false)
     private NFOrigemProcesso indicadorOrigemProcesso;
 
     @Element(name = "tpAto", required = false)
