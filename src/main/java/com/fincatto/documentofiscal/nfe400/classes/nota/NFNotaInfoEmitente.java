@@ -37,7 +37,7 @@ public class NFNotaInfoEmitente extends DFBase {
     @Element(name = "CNAE", required = false)
     private String classificacaoNacionalAtividadesEconomicas;
     
-    @Element(name = "CRT")
+    @Element(name = "CRT", required = false)
     private NFRegimeTributario regimeTributario;
 
     public void setCnpj(final String cnpj) {
