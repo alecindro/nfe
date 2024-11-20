@@ -17,10 +17,13 @@ import org.simpleframework.xml.Root;
 public class CTeNotaInfoEmitente extends DFBase {
     private static final long serialVersionUID = 7416168996867090127L;
 
-    @Element(name = "CNPJ")
+    @Element(name = "CNPJ", required = false)
     private String cnpj;
     
-    @Element(name = "IE")
+    @Element(name = "CPF", required = false)
+    private String cpf;
+    
+    @Element(name = "IE", required = false)
     private String inscricaoEstadual;
 
     @Element(name = "IEST", required = false)
@@ -118,4 +121,22 @@ public class CTeNotaInfoEmitente extends DFBase {
         this.tipoRegimeTributario = tipoRegimeTributario;
         return this;
     }
+
+	public String getCpf() {
+		return cpf;
+	}
+
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
+	}
+
+	public CTeNotaEnderecoEmitente getEndereco() {
+		return endereco;
+	}
+
+	public void setEndereco(CTeNotaEnderecoEmitente endereco) {
+		this.endereco = endereco;
+	}
+    
+    
 }
