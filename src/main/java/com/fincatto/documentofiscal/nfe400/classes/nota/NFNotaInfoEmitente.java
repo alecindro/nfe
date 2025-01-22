@@ -25,7 +25,7 @@ public class NFNotaInfoEmitente extends DFBase {
     @Element(name = "enderEmit")
     private NFEndereco endereco;
     
-    @Element(name = "IE")
+    @Element(name = "IE", required = false)
     private String inscricaoEstadual;
 
     @Element(name = "IEST", required = false)
