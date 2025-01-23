@@ -1,13 +1,14 @@
 package com.fincatto.documentofiscal.cte400.classes.os;
 
-import com.fincatto.documentofiscal.DFBase;
-import com.fincatto.documentofiscal.cte.CTeConfig;
+import java.util.List;
+
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.ElementList;
 import org.simpleframework.xml.Namespace;
 import org.simpleframework.xml.Root;
 
-import java.util.List;
+import com.fincatto.documentofiscal.DFBase;
+import com.fincatto.documentofiscal.cte.CTeConfig;
 
 @Root(name = "cobr")
 @Namespace(reference = CTeConfig.NAMESPACE)
@@ -16,7 +17,7 @@ public class CTeOSInfoCTeNormalInfoCobranca extends DFBase {
 
     @Element(name = "fat", required = false)
     private CTeOSInfoCTeNormalInfoCobrancaFatura fatura;
-
+    
     @ElementList(name = "dup", inline = true, required = false)
     private List<CTeOSInfoCTeNormalInfoCobrancaDuplicata> duplicatas;
 

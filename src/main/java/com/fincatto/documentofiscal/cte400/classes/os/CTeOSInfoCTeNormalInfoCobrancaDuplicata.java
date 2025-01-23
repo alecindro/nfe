@@ -11,7 +11,7 @@ import org.simpleframework.xml.Root;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
-@Root(name = "fat")
+@Root(name = "dup")
 @Namespace(reference = CTeConfig.NAMESPACE)
 public class CTeOSInfoCTeNormalInfoCobrancaDuplicata extends DFBase {
     private static final long serialVersionUID = 5321172274976502832L;
