@@ -14,7 +14,7 @@ public class NFNotaInfoItemImpostoCOFINSAliquota extends DFBase {
 
     private static final List<NFNotaInfoSituacaoTributariaCOFINS> SITUACOES_VALIDAS = Arrays.asList(NFNotaInfoSituacaoTributariaCOFINS.OPERACAO_TRIBUTAVEL_CUMULATIVO_NAO_CUMULATIVO, NFNotaInfoSituacaoTributariaCOFINS.OPERACAO_TRIBUTAVEL_ALIQUOTA_DIFERENCIADA);
     
-    @Element(name = "CST")
+    @Element(name = "CST", required = false)
     private NFNotaInfoSituacaoTributariaCOFINS situacaoTributaria;
     
     @Element(name = "vBC")

@@ -14,7 +14,7 @@ public class NFNotaInfoItemImpostoPISAliquota extends DFBase {
 
     private static final List<NFNotaInfoSituacaoTributariaPIS> SITUACOES_VALIDAS = Arrays.asList(NFNotaInfoSituacaoTributariaPIS.OPERACAO_TRIBUTAVEL_CUMULATIVO_NAO_CUMULATIVO, NFNotaInfoSituacaoTributariaPIS.OPERACAO_TRIBUTAVEL_ALIQUOTA_DIFERENCIADA);
     
-    @Element(name = "CST")
+    @Element(name = "CST", required = false)
     private NFNotaInfoSituacaoTributariaPIS situacaoTributaria;
     
     @Element(name = "vBC")

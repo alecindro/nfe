@@ -11,7 +11,7 @@ public class NFNotaInfoObservacao extends DFBase {
     @Attribute(name = "xCampo")
     private String identificacaoCampo;
     
-    @Element(name = "xTexto")
+    @Element(name = "xTexto", required = false)
     private String conteudoCampo;
 
     public void setIdentificacaoCampo(final String identificacaoCampo) {
