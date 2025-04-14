@@ -7792,6 +7792,7 @@ public class EnvCFe
                      * 
                      * 
                      */
+                    @JsonIgnoreProperties(ignoreUnknown = true)
                     public static class MP
                         implements Serializable
                     {

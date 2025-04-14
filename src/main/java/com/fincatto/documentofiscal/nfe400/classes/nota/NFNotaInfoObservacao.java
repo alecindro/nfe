@@ -8,7 +8,7 @@ import org.simpleframework.xml.Element;
 public class NFNotaInfoObservacao extends DFBase {
     private static final long serialVersionUID = 7420062278238333996L;
     
-    @Attribute(name = "xCampo")
+    @Attribute(name = "xCampo", required = false)
     private String identificacaoCampo;
     
     @Element(name = "xTexto", required = false)
