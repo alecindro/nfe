@@ -16,7 +16,7 @@ public class NFNotaInfoItemImpostoICMSSN900 extends DFBase {
     @Element(name = "orig")
     private NFOrigem origem;
     
-    @Element(name = "CSOSN")
+    @Element(name = "CSOSN", required = false)
     private NFNotaSituacaoOperacionalSimplesNacional situacaoOperacaoSN;
 
     @Element(name = "modBC", required = false)
