@@ -33,7 +33,7 @@ public class CTeOSProcessado extends DFBase {
     @Element(name = "CTeOS")
     private CTeOS cte;
 
-    @Element(name = "protCTe")
+    @Element(name = "protCTe", required = false)
     private CTeProtocolo protocolo;
 
     public String getIpTransmissor() {

@@ -23,7 +23,7 @@ public class CTeOSInfoCTeNormal extends DFBase {
     @ElementList(name = "seg", inline = true, required = false)
     private List<CTeOSInfoCTeNormalSeguro> seguros;
 
-    @Element(name = "infModal")
+    @Element(name = "infModal", required = false)
     private CTeOSInfoCTeNormalInfoModal infoModal;
 
     @Element(name = "infCteSub", required = false)
