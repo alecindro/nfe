@@ -1,5 +1,13 @@
 package com.fincatto.documentofiscal.nfe400.classes.nota;
 
+import java.math.BigDecimal;
+import java.util.List;
+
+import org.simpleframework.xml.Element;
+import org.simpleframework.xml.ElementList;
+import org.simpleframework.xml.Path;
+import org.simpleframework.xml.convert.Convert;
+
 import com.fincatto.documentofiscal.DFBase;
 import com.fincatto.documentofiscal.nfe400.classes.NFProdutoCompoeValorNota;
 import com.fincatto.documentofiscal.nfe400.converters.NFStringNullToEmptyConverter;
@@ -7,12 +15,6 @@ import com.fincatto.documentofiscal.validadores.DFBigDecimalValidador;
 import com.fincatto.documentofiscal.validadores.DFIntegerValidador;
 import com.fincatto.documentofiscal.validadores.DFListValidador;
 import com.fincatto.documentofiscal.validadores.DFStringValidador;
-import org.simpleframework.xml.Element;
-import org.simpleframework.xml.ElementList;
-import org.simpleframework.xml.convert.Convert;
-
-import java.math.BigDecimal;
-import java.util.List;
 
 public class NFNotaInfoItemProduto extends DFBase {
     private static final long serialVersionUID = -2271625077897052364L;
@@ -48,7 +50,7 @@ public class NFNotaInfoItemProduto extends DFBase {
     @Element(name = "cBenef", required = false)
     private String codigoBeneficioFiscalUF;
 
-    @Element(name = "gCred", required = false)
+    @Path("gCred")
     private NFNotaInfoItemProdutoGrupoCreditoPresumido grupoCreditoPresumido;
 
     @Element(name = "EXTIPI", required = false)
