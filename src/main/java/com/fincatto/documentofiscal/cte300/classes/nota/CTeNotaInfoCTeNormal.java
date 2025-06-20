@@ -27,7 +27,7 @@ public class CTeNotaInfoCTeNormal extends DFBase {
     @Element(name = "docAnt", required = false)
     private CTeNotaInfoCTeNormalDocumentosAnteriores documentosAnteriores;
     
-    @Element(name = "infModal")
+    @Element(name = "infModal", required = false)
     private CTeNotaInfoCTeNormalInfoModal infoModal;
 
     @ElementList(name = "veicNovos", inline = true, required = false)
