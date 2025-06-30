@@ -825,7 +825,7 @@ public class FabricaDeObjetosFake {
     public static NFNotaInfoItemDetalheExportacao getNFNotaInfoItemDetalheExportacao() {
         final NFNotaInfoItemDetalheExportacao detalheExportacao = new NFNotaInfoItemDetalheExportacao();
         detalheExportacao.setExportacaoIndireta(FabricaDeObjetosFake.getNFNotaInfoItemExportacaoIndireta());
-        detalheExportacao.setNumeroAtoConcessorioDrawback(new BigInteger("99999999999"));
+        detalheExportacao.setNumeroAtoConcessorioDrawback(new String("99999999999"));
         return detalheExportacao;
     }
 

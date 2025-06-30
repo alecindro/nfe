@@ -15,4 +15,16 @@ public abstract class DFBigIntegerValidador {
             throw new NumberFormatException(String.format("%s com tamanho maior que 11", info));
         }
     }
+    
+    public static void tamanho12(final String valor, final String info) {
+        if (valor != null && valor.length() > 12) {
+            throw new NumberFormatException(String.format("%s com tamanho maior que 12", info));
+        }
+    }
+
+    public static void tamanho11(final String valor, final String info) {
+        if (valor != null && valor.length() > 11) {
+            throw new NumberFormatException(String.format("%s com tamanho maior que 11", info));
+        }
+    }
 }
