@@ -8,6 +8,7 @@
 	<description>Biblioteca de comunicacao de nota fiscal eletronica brasileira</description>
 	<url>https://github.com/wmixvideo/nfe</url>
 
+
 	<licenses>
 		<license>
 			<name>Apache License, Version 2.0</name>
@@ -66,7 +67,7 @@
             <name>Carine Bockorny</name>
             <url>https://github.com/cbockorny</url>
         </developer>
-	</developers>
+    </developers>
 
     <dependencies>
     			<dependency>
