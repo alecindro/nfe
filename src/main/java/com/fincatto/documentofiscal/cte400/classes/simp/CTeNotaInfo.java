@@ -1,12 +1,33 @@
-package com.fincatto.documentofiscal.cte400.classes.nota;
+package com.fincatto.documentofiscal.cte400.classes.simp;
+
+import java.util.List;
+
+import org.simpleframework.xml.Attribute;
+import org.simpleframework.xml.Element;
+import org.simpleframework.xml.ElementList;
+import org.simpleframework.xml.Namespace;
+import org.simpleframework.xml.Root;
 
 import com.fincatto.documentofiscal.DFBase;
 import com.fincatto.documentofiscal.cte.CTeConfig;
+import com.fincatto.documentofiscal.cte400.classes.nota.CTeInformacoesNotaFiscalFacil;
+import com.fincatto.documentofiscal.cte400.classes.nota.CTeInformacoesPAA;
+import com.fincatto.documentofiscal.cte400.classes.nota.CTeNotaInfoAutorizacaoDownload;
+import com.fincatto.documentofiscal.cte400.classes.nota.CTeNotaInfoCTeComplementar;
+import com.fincatto.documentofiscal.cte400.classes.nota.CTeNotaInfoCTeNormal;
+import com.fincatto.documentofiscal.cte400.classes.nota.CTeNotaInfoDadosComplementares;
+import com.fincatto.documentofiscal.cte400.classes.nota.CTeNotaInfoDestinatario;
+import com.fincatto.documentofiscal.cte400.classes.nota.CTeNotaInfoEmitente;
+import com.fincatto.documentofiscal.cte400.classes.nota.CTeNotaInfoExpedidorCarga;
+import com.fincatto.documentofiscal.cte400.classes.nota.CTeNotaInfoIdentificacao;
+import com.fincatto.documentofiscal.cte400.classes.nota.CTeNotaInfoIdentificacaoTomadorServico4;
+import com.fincatto.documentofiscal.cte400.classes.nota.CTeNotaInfoInformacoesRelativasImpostos;
+import com.fincatto.documentofiscal.cte400.classes.nota.CTeNotaInfoRecebedorCarga;
+import com.fincatto.documentofiscal.cte400.classes.nota.CTeNotaInfoRemetente;
+import com.fincatto.documentofiscal.cte400.classes.nota.CTeNotaInfoResponsavelTecnico;
+import com.fincatto.documentofiscal.cte400.classes.nota.CTeNotaInfoValorPrestacaoServico;
 import com.fincatto.documentofiscal.validadores.DFListValidador;
 import com.fincatto.documentofiscal.validadores.DFStringValidador;
-import org.simpleframework.xml.*;
-
-import java.util.List;
 
 /**
  * Informações do CT-e
@@ -62,7 +83,12 @@ public class CTeNotaInfo extends DFBase {
 
     @Element(name="infRespTec", required = false)
     private CTeNotaInfoResponsavelTecnico informacaoResposavelTecnico;
+    
+    @Element(name = "toma", required = false)
+    private CTeNotaInfoIdentificacaoTomadorServico4 tomadorServico4;
 
+    @Element(name = "total", required = false)
+    private CTeNotaSimTotal cteNotaSimTotal;
     /**
      * Informações da Nota Fiscal Facil de preenchimento exclusivo pelo app NFF
      */
@@ -267,4 +293,22 @@ public class CTeNotaInfo extends DFBase {
     public void setInformacoesPAA(CTeInformacoesPAA informacoesPAA) {
         this.informacoesPAA = informacoesPAA;
     }
+
+	public CTeNotaInfoIdentificacaoTomadorServico4 getTomadorServico4() {
+		return tomadorServico4;
+	}
+
+	public void setTomadorServico4(CTeNotaInfoIdentificacaoTomadorServico4 tomadorServico4) {
+		this.tomadorServico4 = tomadorServico4;
+	}
+
+	public CTeNotaSimTotal getCteNotaSimTotal() {
+		return cteNotaSimTotal;
+	}
+
+	public void setCteNotaSimTotal(CTeNotaSimTotal cteNotaSimTotal) {
+		this.cteNotaSimTotal = cteNotaSimTotal;
+	}
+    
+    
 }
