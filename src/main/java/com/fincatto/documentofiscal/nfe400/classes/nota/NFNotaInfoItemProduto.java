@@ -78,13 +78,13 @@ public class NFNotaInfoItemProduto extends DFBase {
     @Element(name = "cBarraTrib", required = false)
     private String codigoDeBarrasDiferenteGtinTributavel;
 
-    @Element(name = "uTrib")
+    @Element(name = "uTrib", required = false)
     private String unidadeTributavel;
 
-    @Element(name = "qTrib")
+    @Element(name = "qTrib",required = false)
     private String quantidadeTributavel;
 
-    @Element(name = "vUnTrib")
+    @Element(name = "vUnTrib",required = false)
     private String valorUnitarioTributavel;
 
     @Element(name = "vFrete", required = false)
