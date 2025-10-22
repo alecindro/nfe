@@ -244,3 +244,150 @@ public static void main(String args[]){
     }
 }
 ```
+
+# Integração Maven com AWS CodeArtifact
+
+Este documento descreve o processo de autenticação e configuração do **Maven** para utilização do **AWS CodeArtifact**, bem como o **deploy** de uma aplicação **Java 11**.
+
+---
+
+## 📋 Pré-requisitos
+
+Antes de iniciar, verifique se você possui:
+
+* Conta AWS com permissões de acesso ao CodeArtifact e IAM.
+* AWS CLI configurado localmente (`aws configure`).
+* Java 11 instalado.
+* Maven 3.6+ instalado.
+* Repositório CodeArtifact previamente criado.
+
+---
+
+## 🔑 1. Obter o token de autenticação do CodeArtifact
+
+O Maven utiliza um **token temporário** para autenticar com o CodeArtifact. Esse token expira após 12 horas.
+
+Execute o comando abaixo para gerar o token:
+
+```bash
+aws codeartifact get-authorization-token --domain mister --domain-owner 434209040133 --region us-east-1 --query authorizationToken --output text
+```
+
+> **Dica:** Você pode automatizar esse processo em scripts de build para renovação automática do token.
+
+---
+
+## ⚙️ 2. Atualizar o arquivo `settings.xml`
+
+O arquivo `settings.xml` (geralmente localizado em `~/.m2/settings.xml`) deve conter as credenciais e repositórios do CodeArtifact.
+
+Exemplo de configuração:
+
+```xml
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0
+          https://maven.apache.org/xsd/settings-1.0.0.xsd">
+
+  <servers>
+    <server>
+      <id>mister-maven</id>
+      <username>aws</username>
+      <password>${env:CODEARTIFACT_AUTH_TOKEN}</password>
+    </server>
+  </servers>
+
+  <profiles>
+    <profile>
+      <id>mister-maven</id>
+      <repositories>
+        <repository>
+          <id>mister-maven</id>
+          <url>https://mister-434209040133.d.codeartifact.us-east-1.amazonaws.com/maven/maven/</url>
+        </repository>
+      </repositories>
+      <pluginRepositories>
+        <pluginRepository>
+          <id>mister-maven</id>
+          <url>https://mister-434209040133.d.codeartifact.us-east-1.amazonaws.com/maven/maven/</url>
+        </pluginRepository>
+      </pluginRepositories>
+    </profile>
+  </profiles>
+
+  
+
+</settings>
+```
+
+---
+
+## 🌍 3. Exportar o token como variável de ambiente
+
+Para evitar armazenar o token diretamente no arquivo `settings.xml`, exporte-o como variável de ambiente:
+
+```bash
+FOR /F "tokens=*" %g IN ('aws codeartifact get-authorization-token --domain mister --domain-owner 434209040133 --region us-east-1 --query authorizationToken --output text') do (SET CODEARTIFACT_AUTH_TOKEN=%g)
+```
+
+Verifique se o token foi definido corretamente:
+
+```bash
+echo $CODEARTIFACT_AUTH_TOKEN
+```
+
+---
+
+## 🚀 4. Deploy da aplicação no CodeArtifact
+
+Antes do deploy, confirme se o `pom.xml` contém a configuração de distribuição:
+
+```xml
+<distributionManagement>
+  <repository>
+    <id>codeartifact</id>
+    <url>https://<nome-do-repo>-<id-da-conta-aws>.d.codeartifact.<região>.amazonaws.com/maven/<nome-do-repo>/</url>
+  </repository>
+</distributionManagement>
+```
+
+Então, execute o deploy com:
+
+```bash
+mvn clean deploy
+```
+
+> O Maven usará o `settings.xml` configurado e o token exportado para autenticar no CodeArtifact.
+
+---
+
+## 🧰 5. Automatização (opcional)
+
+Para CI/CD, adicione a geração e exportação do token no pipeline antes da etapa de build/deploy:
+
+Exemplo (GitHub Actions):
+
+```yaml
+- name: Configurar CodeArtifact
+  run: |
+    export CODEARTIFACT_AUTH_TOKEN=$(aws codeartifact get-authorization-token \
+      --domain my-domain \
+      --domain-owner 123456789012 \
+      --query authorizationToken \
+      --output text)
+    echo "CODEARTIFACT_AUTH_TOKEN=$CODEARTIFACT_AUTH_TOKEN" >> $GITHUB_ENV
+```
+
+---
+
+## 🧾 Referências
+
+* [AWS CodeArtifact Documentation](https://docs.aws.amazon.com/codeartifact/latest/ug/welcome.html)
+* [Maven Settings Reference](https://maven.apache.org/settings.html)
+* [AWS CLI Reference for CodeArtifact](https://docs.aws.amazon.com/cli/latest/reference/codeartifact/)
+
+---
+
+**Autor:** Bruno Pereira
+**Versão:** 1.0
+**Data:** 22/10/2025
