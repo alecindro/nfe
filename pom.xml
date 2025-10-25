@@ -3,25 +3,30 @@
 	<groupId>br.com.mrcontador</groupId>
 	<artifactId>nfe</artifactId>
 	<packaging>jar</packaging>
-	<version>4.0.36</version>
+	<version>4.0.38</version>
 	<name>nfe</name>
 	<description>Biblioteca de comunicacao de nota fiscal eletronica brasileira</description>
 	<url>https://github.com/wmixvideo/nfe</url>
+    <licenses>
+        <license>
+            <name>MIT License</name>
+            <url>https://opensource.org/licenses/MIT</url>
+        </license>
+    </licenses>
+
+    <scm>
+        <connection>scm:git:git://github.com/equipemistercontador/nfe.git</connection>
+        <developerConnection>scm:git:ssh://github.com:equipemistercontador/nfe.git</developerConnection>
+        <url>https://github.com/equipemistercontador/nfe</url>
+    </scm>
 
     <distributionManagement>
         <repository>
-            <id>mister-maven</id>
-            <url>https://mister-434209040133.d.codeartifact.us-east-1.amazonaws.com/maven/maven/</url>
+            <id>github</id>
+            <name>GitHub Packages</name>
+            <url>https://maven.pkg.github.com/equipemistercontador/nfe</url>
         </repository>
     </distributionManagement>
-	<licenses>
-		<license>
-			<name>Apache License, Version 2.0</name>
-			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
-			<distribution>repo</distribution>
-		</license>
-	</licenses>
-
 
 	<properties>
 		<argLine>-Djava.security.egd=file:/dev/./urandom -Xmx256m</argLine>
@@ -38,13 +43,6 @@
 		<simple-xml.version>2.7.1</simple-xml.version>
 	</properties>
 	
-	    <scm>
-        <url>git@github.com:wmixvideo/nfe.git</url>
-        <connection>scm:git:git@github.com:wmixvideo/nfe.git</connection>
-        <developerConnection>scm:git:git@github.com:wmixvideo/nfe.git</developerConnection>
-        <tag>HEAD</tag>
-    </scm>
-
 
 	<developers>
 		<developer>
@@ -254,6 +252,27 @@
                         <exclude>**/webservices/**/*</exclude>
                     </excludes>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>3.2.1</version>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>jar-no-fork</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-deploy-plugin</artifactId>
+                <version>3.1.0</version>
             </plugin>
         </plugins>
     </build>
