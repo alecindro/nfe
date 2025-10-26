@@ -9,7 +9,7 @@ pipeline {
             steps {
                 script {
                  withCredentials([string(credentialsId: 'token_github', variable: 'TOKEN_GITHUB')]) {
-                                    sh 'mvn clean install -DskipTests  -s  /opt/settings.xml -DTOKEN_GITHUB=$TOKEN_GITHUB'
+                                    sh 'mvn clean install -DskipTests=true  -s  /opt/settings.xml -DTOKEN_GITHUB=$TOKEN_GITHUB'
                                 }
                 }
             }
