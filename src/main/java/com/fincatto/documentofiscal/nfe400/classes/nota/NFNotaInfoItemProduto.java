@@ -102,6 +102,9 @@ public class NFNotaInfoItemProduto extends DFBase {
     @Element(name = "indTot")
     private NFProdutoCompoeValorNota compoeValorNota;
 
+    @Element(name = "indBemMovelUsado", required = false)
+    private String indicadorBemMovelUsado;
+
     @ElementList(entry = "DI", inline = true, required = false)
     private List<NFNotaInfoItemProdutoDeclaracaoImportacao> declaracoesImportacao;
 
@@ -249,8 +252,12 @@ public class NFNotaInfoItemProduto extends DFBase {
     public void setCompoeValorNota(final NFProdutoCompoeValorNota compoeValorNota) {
         this.compoeValorNota = compoeValorNota;
     }
+    
+    public void setIndicadorBemMovelUsado(String indicadorBemMovelUsado) {
+		this.indicadorBemMovelUsado = indicadorBemMovelUsado;
+	}
 
-    public void setDeclaracoesImportacao(final List<NFNotaInfoItemProdutoDeclaracaoImportacao> declaracoesImportacao) {
+	public void setDeclaracoesImportacao(final List<NFNotaInfoItemProdutoDeclaracaoImportacao> declaracoesImportacao) {
         this.declaracoesImportacao = declaracoesImportacao;
     }
 
@@ -453,7 +460,11 @@ public class NFNotaInfoItemProduto extends DFBase {
         return this.compoeValorNota;
     }
 
-    public List<NFNotaInfoItemProdutoDeclaracaoImportacao> getDeclaracoesImportacao() {
+    public String getIndicadorBemMovelUsado() {
+		return indicadorBemMovelUsado;
+	}
+
+	public List<NFNotaInfoItemProdutoDeclaracaoImportacao> getDeclaracoesImportacao() {
         return this.declaracoesImportacao;
     }
 
