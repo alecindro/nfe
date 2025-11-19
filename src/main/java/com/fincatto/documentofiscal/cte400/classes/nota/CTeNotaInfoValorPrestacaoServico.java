@@ -20,10 +20,10 @@ import java.util.List;
 public class CTeNotaInfoValorPrestacaoServico extends DFBase {
     private static final long serialVersionUID = 1876115025641468424L;
 
-    @Element(name = "vTPrest")
+    @Element(name = "vTPrest", required = false)
     private String valorTotalPrestacaoServico;
     
-    @Element(name = "vRec")
+    @Element(name = "vRec", required = false)
     private String valorReceber;
 
     @ElementList(name = "Comp", inline = true, required = false)

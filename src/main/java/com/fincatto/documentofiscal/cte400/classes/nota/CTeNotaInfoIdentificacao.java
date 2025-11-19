@@ -61,7 +61,7 @@ public class CTeNotaInfoIdentificacao extends DFBase {
     @Element(name = "tpAmb")
     private DFAmbiente ambiente;
     
-    @Element(name = "tpCTe")
+    @Element(name = "tpCTe", required = false)
     private CTFinalidade finalidade;
     
     @Element(name = "procEmi")
@@ -73,13 +73,13 @@ public class CTeNotaInfoIdentificacao extends DFBase {
     @Element(name = "indGlobalizado", required = false)
     private Integer indicadorGlobalizado;
     
-    @Element(name = "cMunEnv")
+    @Element(name = "cMunEnv", required = false)
     private String codigoMunicipioEnvio;
     
-    @Element(name = "xMunEnv")
+    @Element(name = "xMunEnv", required = false)
     private String descricaoMunicipioEnvio;
     
-    @Element(name = "UFEnv")
+    @Element(name = "UFEnv", required = false)
     private String siglaUFEnvio;
     
     @Element(name = "modal")
@@ -88,22 +88,22 @@ public class CTeNotaInfoIdentificacao extends DFBase {
     @Element(name = "tpServ")
     private CTTipoServico tipoServico;
     
-    @Element(name = "cMunIni")
+    @Element(name = "cMunIni" , required = false)
     private String codigoMunicipioInicio;
     
-    @Element(name = "xMunIni")
+    @Element(name = "xMunIni" , required = false)
     private String descricaoMunicipioInicio;
     
-    @Element(name = "UFIni")
+    @Element(name = "UFIni" , required = false)
     private String siglaUfInicio;
     
-    @Element(name = "cMunFim")
+    @Element(name = "cMunFim", required = false)
     private String codigoMunicipioFim;
     
-    @Element(name = "xMunFim")
+    @Element(name = "xMunFim", required = false)
     private String descricaoMunicipioFim;
     
-    @Element(name = "UFFim")
+    @Element(name = "UFFim", required = false)
     private String siglaUfFim;
     
     @Element(name = "retira")
@@ -112,7 +112,7 @@ public class CTeNotaInfoIdentificacao extends DFBase {
     @Element(name = "xDetRetira", required = false)
     private String detalheRetira;
     
-    @Element(name = "indIEToma")
+    @Element(name = "indIEToma",required = false)
     private CTIndicadorTomador indIEToma;
     
     @Element(name = "toma3", required = false)

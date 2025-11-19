@@ -45,7 +45,7 @@ public class CTeNotaInfo extends DFBase {
     @Element(name = "dest", required = false)
     private CTeNotaInfoDestinatario destinatario;
 
-    @Element(name = "vPrest")
+    @Element(name = "vPrest", required = false)
     private CTeNotaInfoValorPrestacaoServico valorPrestacaoServico;
 
     @Element(name = "imp")
